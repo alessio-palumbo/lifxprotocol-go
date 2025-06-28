@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alessio-palumbo/lifxprotocol-go/decode"
+	"github.com/alessio-palumbo/lifxprotocol-go/cmd/protocol-gen/decode"
 )
 
 //go:embed testdata

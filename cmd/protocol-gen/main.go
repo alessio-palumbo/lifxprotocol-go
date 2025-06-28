@@ -6,8 +6,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/alessio-palumbo/lifxprotocol-go/decode"
-	"github.com/alessio-palumbo/lifxprotocol-go/generate"
+	"github.com/alessio-palumbo/lifxprotocol-go/cmd/protocol-gen/decode"
+	"github.com/alessio-palumbo/lifxprotocol-go/cmd/protocol-gen/generate"
 )
 
 const (
