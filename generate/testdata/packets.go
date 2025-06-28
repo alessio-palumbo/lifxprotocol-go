@@ -1,4 +1,6 @@
 // Code generated. DO NOT EDIT.
+// Source: https://github.com/LIFX/public-protocol@0000000000000000000000000000000000000000
+// Generated: 2006-01-02T15:04:05Z
 package packets
 
 import (

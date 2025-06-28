@@ -6,12 +6,14 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+	"time"
 
 	"github.com/alessio-palumbo/lifxprotocol-go/decode"
 )
 
 //go:embed testdata
 var testdataFS embed.FS
+var testNow = time.Date(2006, time.January, 2, 15, 04, 05, 0, time.UTC)
 
 func Test_generateEnums(t *testing.T) {
 	enums := []decode.Enum{
@@ -39,7 +41,9 @@ func Test_generateEnums(t *testing.T) {
 	defer os.RemoveAll(tmpDir)
 
 	tmpFilePath := filepath.Join(tmpDir, "enums.go")
-	if err := generateEnums(tmpFilePath, enums); err != nil {
+
+	g := newGenerator("0000000000000000000000000000000000000000", testNow)
+	if err := g.generateEnums(tmpFilePath, enums); err != nil {
 		t.Fatalf("generateEnums failed: %v", err)
 	}
 
@@ -78,7 +82,8 @@ func Test_generateFields(t *testing.T) {
 	defer os.RemoveAll(tmpDir)
 
 	tmpFilePath := filepath.Join(tmpDir, "fields.go")
-	if err := generateFields(tmpFilePath, fields); err != nil {
+	g := newGenerator("0000000000000000000000000000000000000000", testNow)
+	if err := g.generateFields(tmpFilePath, fields); err != nil {
 		t.Fatalf("generateFields failed: %v", err)
 	}
 
@@ -117,7 +122,8 @@ func Test_generateUnions(t *testing.T) {
 	defer os.RemoveAll(tmpDir)
 
 	tmpFilePath := filepath.Join(tmpDir, "unions.go")
-	if err := generateUnions(tmpFilePath, unions); err != nil {
+	g := newGenerator("0000000000000000000000000000000000000000", testNow)
+	if err := g.generateUnions(tmpFilePath, unions); err != nil {
 		t.Fatalf("generateUnions failed: %v", err)
 	}
 
@@ -156,7 +162,8 @@ func Test_generatePackets(t *testing.T) {
 	}
 	defer os.RemoveAll(tmpDir)
 
-	if err := generatePackets(tmpDir, packets); err != nil {
+	g := newGenerator("0000000000000000000000000000000000000000", testNow)
+	if err := g.generatePackets(tmpDir, packets); err != nil {
 		t.Fatalf("generatePackets failed: %v", err)
 	}
 

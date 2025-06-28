@@ -14,7 +14,7 @@ import (
 //go:embed templates/*
 var templates embed.FS
 
-func generateFromTemplate(tmplPath, outputPath string, data any) error {
+func (g *generator) generateFromTemplate(tmplPath, outputPath string, data any) error {
 	dir := filepath.Dir(outputPath)
 	if err := os.MkdirAll(dir, 0755); err != nil {
 		return fmt.Errorf("creating output directory [%s]: %w", dir, err)
@@ -26,6 +26,7 @@ func generateFromTemplate(tmplPath, outputPath string, data any) error {
 	}
 
 	tmpl, err := template.New(filepath.Base(tmplPath)).Funcs(template.FuncMap{
+		"header":    func() string { return g.header },
 		"camelcase": camelcase,
 	}).Parse(string(tmplBytes))
 	if err != nil {
