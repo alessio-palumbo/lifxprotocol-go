@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@f061a60a2e9305e63ca75cfa53ad78d276de0e0a
-// Generated: 2025-06-28T09:47:36Z
+// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
+// Generated: 2025-12-16T04:29:29Z
 package packets
 
 // Payload represents a LIFX packet payload that can be serialized and deserialized.
@@ -85,6 +85,7 @@ const (
 	PayloadTypeTileGet64                       payloadType = 707
 	PayloadTypeTileState64                     payloadType = 711
 	PayloadTypeTileSet64                       payloadType = 715
+	PayloadTypeTileCopyFrameBuffer             payloadType = 716
 	PayloadTypeTileGetEffect                   payloadType = 718
 	PayloadTypeTileSetEffect                   payloadType = 719
 	PayloadTypeTileStateEffect                 payloadType = 720
@@ -164,6 +165,7 @@ var Payloads = map[uint16]func() Payload{
 	707: func() Payload { return &TileGet64{} },
 	711: func() Payload { return &TileState64{} },
 	715: func() Payload { return &TileSet64{} },
+	716: func() Payload { return &TileCopyFrameBuffer{} },
 	718: func() Payload { return &TileGetEffect{} },
 	719: func() Payload { return &TileSetEffect{} },
 	720: func() Payload { return &TileStateEffect{} },

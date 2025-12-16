@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@f061a60a2e9305e63ca75cfa53ad78d276de0e0a
-// Generated: 2025-06-28T09:47:36Z
+// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
+// Generated: 2025-12-16T04:29:29Z
 package packets
 
 import "github.com/alessio-palumbo/lifxprotocol-go/gen/protocol/enums"
@@ -101,10 +101,10 @@ type TileStateDevice struct {
 
 // TileBufferRect defines the fields for a group of 4 bytes.
 type TileBufferRect struct {
-	Reserved1 uint8
-	X         uint8
-	Y         uint8
-	Width     uint8
+	FbIndex uint8
+	X       uint8
+	Y       uint8
+	Width   uint8
 }
 
 // TileEffectParameter defines the fields for a group of 32 bytes.

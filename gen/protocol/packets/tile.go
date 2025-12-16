@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@f061a60a2e9305e63ca75cfa53ad78d276de0e0a
-// Generated: 2025-06-28T09:47:36Z
+// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
+// Generated: 2025-12-16T04:29:29Z
 package packets
 
 import (
@@ -290,6 +290,116 @@ func (p *TileSet64) UnmarshalBinary(data []byte) error {
 		return err
 	}
 	if err := binary.Read(buf, binary.LittleEndian, &p.Colors); err != nil {
+		return err
+	}
+	return nil
+}
+
+// TileCopyFrameBuffer defines the fields for a packet of 15 bytes.
+type TileCopyFrameBuffer struct {
+	TileIndex  uint8
+	Length     uint8
+	SrcFbIndex uint8
+	DstFbIndex uint8
+	SrcX       uint8
+	SrcY       uint8
+	DstX       uint8
+	DstY       uint8
+	Width      uint8
+	Height     uint8
+	Duration   uint32
+	Reserved1  uint8
+}
+
+// PayloadType returns the LIFX message type for TileCopyFrameBuffer.
+func (p *TileCopyFrameBuffer) PayloadType() uint16 {
+	return uint16(PayloadTypeTileCopyFrameBuffer)
+}
+
+// Size is the total size of the message.
+func (p *TileCopyFrameBuffer) Size() int {
+	return 15
+}
+
+// MarshalBinary encodes the TileCopyFrameBuffer packet into LIFX binary format.
+func (p *TileCopyFrameBuffer) MarshalBinary() ([]byte, error) {
+	var buf bytes.Buffer
+	if err := binary.Write(&buf, binary.LittleEndian, p.TileIndex); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.Length); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.SrcFbIndex); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.DstFbIndex); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.SrcX); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.SrcY); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.DstX); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.DstY); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.Width); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.Height); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.Duration); err != nil {
+		return nil, err
+	}
+	if err := binary.Write(&buf, binary.LittleEndian, p.Reserved1); err != nil {
+		return nil, err
+	}
+	return buf.Bytes(), nil
+}
+
+// UnmarshalBinary decodes the LIFX binary format into the TileCopyFrameBuffer struct.
+func (p *TileCopyFrameBuffer) UnmarshalBinary(data []byte) error {
+	buf := bytes.NewReader(data)
+	if err := binary.Read(buf, binary.LittleEndian, &p.TileIndex); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.Length); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.SrcFbIndex); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.DstFbIndex); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.SrcX); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.SrcY); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.DstX); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.DstY); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.Width); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.Height); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.Duration); err != nil {
+		return err
+	}
+	if err := binary.Read(buf, binary.LittleEndian, &p.Reserved1); err != nil {
 		return err
 	}
 	return nil
