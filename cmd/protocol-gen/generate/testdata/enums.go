@@ -10,3 +10,15 @@ const (
 	TestEnumSecondValue TestEnum = 2
 	TestEnumThirdValue  TestEnum = 3
 )
+
+func (e TestEnum) String() string {
+	switch e {
+	case TestEnumFirstValue:
+		return "FirstValue"
+	case TestEnumSecondValue:
+		return "SecondValue"
+	case TestEnumThirdValue:
+		return "ThirdValue"
+	}
+	return ""
+}

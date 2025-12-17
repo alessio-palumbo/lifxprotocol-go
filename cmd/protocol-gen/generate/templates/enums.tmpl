@@ -9,4 +9,15 @@ const (
 	{{ $enum.Name }}{{ camelcase $val.Name }} {{ $enum.Name }} = {{ $val.Value }}
 {{- end }}
 )
+
+func (e {{ $enum.Name }}) String() string {
+    switch e {
+{{- range $val := $enum.Values }}
+    case {{ $enum.Name }}{{ camelcase $val.Name }}:
+        return "{{ camelcase $val.Name }}"
+{{- end }}
+    }
+    return ""
+}
+
 {{- end  }}

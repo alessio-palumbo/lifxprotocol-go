@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
 // Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
-// Generated: 2025-12-16T04:29:29Z
+// Generated: 2025-12-17T01:06:02Z
 package packets
 
 import "github.com/alessio-palumbo/lifxprotocol-go/gen/protocol/enums"
