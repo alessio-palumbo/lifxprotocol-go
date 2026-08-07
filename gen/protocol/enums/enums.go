@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
-// Generated: 2025-12-17T01:06:02Z
+// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
+// Generated: 2026-08-07T02:47:03Z
 package enums
 
 type ButtonGesture uint16
@@ -79,6 +79,7 @@ const (
 	ButtonTargetTypeBUTTONTARGETTYPEPOWERTOGGLELOCALDEVICE    ButtonTargetType = 28
 	ButtonTargetTypeBUTTONTARGETTYPEBRIGHTNESSDOWNLOCALDEVICE ButtonTargetType = 29
 	ButtonTargetTypeBUTTONTARGETTYPEBRIGHTNESSUPLOCALDEVICE   ButtonTargetType = 30
+	ButtonTargetTypeBUTTONTARGETTYPEKELVINSTEPLOCALDEVICE     ButtonTargetType = 31
 )
 
 func (e ButtonTargetType) String() string {
@@ -135,6 +136,8 @@ func (e ButtonTargetType) String() string {
 		return "BUTTONTARGETTYPEBRIGHTNESSDOWNLOCALDEVICE"
 	case ButtonTargetTypeBUTTONTARGETTYPEBRIGHTNESSUPLOCALDEVICE:
 		return "BUTTONTARGETTYPEBRIGHTNESSUPLOCALDEVICE"
+	case ButtonTargetTypeBUTTONTARGETTYPEKELVINSTEPLOCALDEVICE:
+		return "BUTTONTARGETTYPEKELVINSTEPLOCALDEVICE"
 	}
 	return ""
 }
@@ -323,10 +326,11 @@ func (e TileEffectSkyType) String() string {
 type TileEffectType uint8
 
 const (
-	TileEffectTypeTILEEFFECTTYPEOFF   TileEffectType = 0
-	TileEffectTypeTILEEFFECTTYPEMORPH TileEffectType = 2
-	TileEffectTypeTILEEFFECTTYPEFLAME TileEffectType = 3
-	TileEffectTypeTILEEFFECTTYPESKY   TileEffectType = 5
+	TileEffectTypeTILEEFFECTTYPEOFF        TileEffectType = 0
+	TileEffectTypeTILEEFFECTTYPEMORPH      TileEffectType = 2
+	TileEffectTypeTILEEFFECTTYPEFLAME      TileEffectType = 3
+	TileEffectTypeTILEEFFECTTYPESKY        TileEffectType = 5
+	TileEffectTypeTILEEFFECTTYPECOLORSWEEP TileEffectType = 6
 )
 
 func (e TileEffectType) String() string {
@@ -339,6 +343,8 @@ func (e TileEffectType) String() string {
 		return "TILEEFFECTTYPEFLAME"
 	case TileEffectTypeTILEEFFECTTYPESKY:
 		return "TILEEFFECTTYPESKY"
+	case TileEffectTypeTILEEFFECTTYPECOLORSWEEP:
+		return "TILEEFFECTTYPECOLORSWEEP"
 	}
 	return ""
 }

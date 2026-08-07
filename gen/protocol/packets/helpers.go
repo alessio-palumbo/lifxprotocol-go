@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
-// Generated: 2025-12-17T01:06:02Z
+// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
+// Generated: 2026-08-07T02:47:03Z
 package packets
 
 func boolToUint8(b bool) uint8 {

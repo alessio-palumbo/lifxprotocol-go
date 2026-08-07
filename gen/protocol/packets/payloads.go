@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
-// Generated: 2025-12-17T01:06:02Z
+// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
+// Generated: 2026-08-07T02:47:03Z
 package packets
 
 // Payload represents a LIFX packet payload that can be serialized and deserialized.
@@ -69,6 +69,8 @@ const (
 	PayloadTypeLightGetLastHevCycleResult      payloadType = 148
 	PayloadTypeLightStateLastHevCycleResult    payloadType = 149
 	PayloadTypeDeviceStateUnhandled            payloadType = 223
+	PayloadTypeSensorGetAmbientLight           payloadType = 401
+	PayloadTypeSensorStateAmbientLight         payloadType = 402
 	PayloadTypeMultiZoneSetColorZones          payloadType = 501
 	PayloadTypeMultiZoneGetColorZones          payloadType = 502
 	PayloadTypeMultiZoneStateZone              payloadType = 503
@@ -149,6 +151,8 @@ var Payloads = map[uint16]func() Payload{
 	148: func() Payload { return &LightGetLastHevCycleResult{} },
 	149: func() Payload { return &LightStateLastHevCycleResult{} },
 	223: func() Payload { return &DeviceStateUnhandled{} },
+	401: func() Payload { return &SensorGetAmbientLight{} },
+	402: func() Payload { return &SensorStateAmbientLight{} },
 	501: func() Payload { return &MultiZoneSetColorZones{} },
 	502: func() Payload { return &MultiZoneGetColorZones{} },
 	503: func() Payload { return &MultiZoneStateZone{} },

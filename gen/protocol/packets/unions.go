@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
-// Generated: 2025-12-17T01:06:02Z
+// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
+// Generated: 2026-08-07T02:47:03Z
 package packets
 
 import "unsafe"
@@ -340,4 +340,18 @@ func (u *ButtonTarget) SetBrightnessUpLocalDevice(v []byte) {
 		panic("invalid length for BrightnessUpLocalDevice: expected 16 bytes")
 	}
 	copy(u[0:16], v)
+}
+
+// KelvinStepLocalDevice returns the union as a pointer to ButtonTargetKelvinStep.
+func (u *ButtonTarget) KelvinStepLocalDevice() *ButtonTargetKelvinStep {
+	return (*ButtonTargetKelvinStep)(unsafe.Pointer(u))
+}
+
+// SetKelvinStepLocalDevice sets the union using the provided *ButtonTargetKelvinStep.
+func (u *ButtonTarget) SetKelvinStepLocalDevice(v *ButtonTargetKelvinStep) {
+	if v == nil {
+		var zero ButtonTargetKelvinStep
+		v = &zero
+	}
+	copy(u[0:16], (*[16]byte)(unsafe.Pointer(v))[:])
 }

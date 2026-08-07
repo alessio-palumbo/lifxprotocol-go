@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@fe8871b049893401c8c6a5fc425971ec55a2fa06
-// Generated: 2025-12-17T01:06:02Z
+// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
+// Generated: 2026-08-07T02:47:03Z
 package packets
 
 import "github.com/alessio-palumbo/lifxprotocol-go/gen/protocol/enums"
@@ -22,6 +22,16 @@ type ButtonTargetDeviceRelays struct {
 	Serial      [6]byte
 	RelaysCount uint8
 	Relays      [9]uint8
+}
+
+// ButtonTargetKelvinStep defines the fields for a group of 16 bytes.
+type ButtonTargetKelvinStep struct {
+	Reserved1  [6]byte
+	MinKelvin  uint16
+	MaxKelvin  uint16
+	KelvinStep uint16
+	Duration   uint16
+	Reserved2  [2]byte
 }
 
 // ButtonAction defines the fields for a group of 20 bytes.
@@ -105,6 +115,14 @@ type TileBufferRect struct {
 	X       uint8
 	Y       uint8
 	Width   uint8
+}
+
+// TileEffectFillRectangle defines the fields for a group of 4 bytes.
+type TileEffectFillRectangle struct {
+	X      uint8
+	Y      uint8
+	Width  uint8
+	Height uint8
 }
 
 // TileEffectParameter defines the fields for a group of 32 bytes.
