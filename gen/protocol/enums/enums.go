@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
-// Generated: 2026-08-07T02:47:03Z
+// Source: https://github.com/LIFX/public-protocol@9289015784bd338a546ce4fe67daa1df0b2abfcd
+// Generated: 2026-09-13T04:04:50Z
 package enums
 
 type ButtonGesture uint16
@@ -267,6 +267,38 @@ func (e MultiZoneExtendedApplicationRequest) String() string {
 		return "MULTIZONEEXTENDEDAPPLICATIONREQUESTAPPLY"
 	case MultiZoneExtendedApplicationRequestMULTIZONEEXTENDEDAPPLICATIONREQUESTAPPLYONLY:
 		return "MULTIZONEEXTENDEDAPPLICATIONREQUESTAPPLYONLY"
+	}
+	return ""
+}
+
+type ThreadRoutingRole uint8
+
+const (
+	ThreadRoutingRoleDEVICETHREADROLEUNSPECIFIED ThreadRoutingRole = 0
+	ThreadRoutingRoleDEVICETHREADROLEUNASSIGNED  ThreadRoutingRole = 1
+	ThreadRoutingRoleDEVICETHREADROLESLEEPY      ThreadRoutingRole = 2
+	ThreadRoutingRoleDEVICETHREADROLEEND         ThreadRoutingRole = 3
+	ThreadRoutingRoleDEVICETHREADROLEREED        ThreadRoutingRole = 4
+	ThreadRoutingRoleDEVICETHREADROLEROUTER      ThreadRoutingRole = 5
+	ThreadRoutingRoleDEVICETHREADROLELEADER      ThreadRoutingRole = 6
+)
+
+func (e ThreadRoutingRole) String() string {
+	switch e {
+	case ThreadRoutingRoleDEVICETHREADROLEUNSPECIFIED:
+		return "DEVICETHREADROLEUNSPECIFIED"
+	case ThreadRoutingRoleDEVICETHREADROLEUNASSIGNED:
+		return "DEVICETHREADROLEUNASSIGNED"
+	case ThreadRoutingRoleDEVICETHREADROLESLEEPY:
+		return "DEVICETHREADROLESLEEPY"
+	case ThreadRoutingRoleDEVICETHREADROLEEND:
+		return "DEVICETHREADROLEEND"
+	case ThreadRoutingRoleDEVICETHREADROLEREED:
+		return "DEVICETHREADROLEREED"
+	case ThreadRoutingRoleDEVICETHREADROLEROUTER:
+		return "DEVICETHREADROLEROUTER"
+	case ThreadRoutingRoleDEVICETHREADROLELEADER:
+		return "DEVICETHREADROLELEADER"
 	}
 	return ""
 }

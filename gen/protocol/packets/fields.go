@@ -1,6 +1,6 @@
 // Code generated. DO NOT EDIT.
-// Source: https://github.com/LIFX/public-protocol@5f023f094cebc24e57ed160dfb6186e4194dad69
-// Generated: 2026-08-07T02:47:03Z
+// Source: https://github.com/LIFX/public-protocol@9289015784bd338a546ce4fe67daa1df0b2abfcd
+// Generated: 2026-09-13T04:04:50Z
 package packets
 
 import "github.com/alessio-palumbo/lifxprotocol-go/gen/protocol/enums"
@@ -85,6 +85,20 @@ type MultiZoneEffectSettings struct {
 	Reserved2  uint32
 	Reserved3  uint32
 	Parameter  MultiZoneEffectParameter
+}
+
+// ThreadLinkHealth defines the fields for a group of 8 bytes.
+type ThreadLinkHealth struct {
+	Rloc16         uint16
+	Reserved1      [0]byte
+	LinkQualityIn  uint8
+	LinkQualityOut uint8
+	Reserved2      [0]byte
+	Reserved3      uint8
+	Reserved4      uint8
+	Reserved5      uint8
+	LinkMarginDb   uint8
+	Reserved6      uint8
 }
 
 // TileAccelMeas defines the fields for a group of 6 bytes.
